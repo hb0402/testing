@@ -21,9 +21,9 @@ def encodeToMorse(mess):
     output[i]=letter_to_morse[mess[i]]
   return output
 
-def decodeFromMorse(mess):
-  for i in range(0,len(mess)):
-    output[i]=morse_to_letter[mess[i]]
+def decodeFromMorse(dec):
+  for i in range(0,len(dec)):
+    output[i]=morse_to_letter[dec[i]]
   return output
 
 while True:
@@ -45,7 +45,8 @@ while True:
 
     elif line == "decode":
             # read the morse to be decoded
-        message = sys.stdin.readline().rstrip()   
+        message = sys.stdin.readline().rstrip( )
+        message = message.split()  
 
         print( "Morse is '%s'" % message   )
         print( "Decoded is '%s'" % decodeFromMorse(message) )
